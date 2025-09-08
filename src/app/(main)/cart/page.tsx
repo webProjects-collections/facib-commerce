@@ -18,9 +18,9 @@ export default async function Page() {
 	if (!checkout || checkout.lines.length < 1) {
 		return (
 			<section className="mx-auto max-w-7xl p-8">
-				<h1 className="mt-8 text-3xl font-bold text-neutral-900">Your Shopping Cart is empty</h1>
+				<h1 className="mt-8 text-3xl font-bold text-neutral-900">Il tuo carrello è vuoto</h1>
 				<p className="my-12 text-sm text-neutral-500">
-					Looks like you haven’t added any items to the cart yet.
+					Sembra che tu non abbia ancora aggiunto articoli al carrello.
 				</p>
 				<Link
 					href="/products"
@@ -34,7 +34,7 @@ export default async function Page() {
 
 	return (
 		<section className="mx-auto max-w-7xl p-8">
-			<h1 className="mt-8 text-3xl font-bold text-neutral-900">Your Shopping Cart</h1>
+			<h1 className="mt-8 text-3xl font-bold text-neutral-900">Il tuo carrello</h1>
 			<form className="mt-12">
 				<ul
 					data-testid="CartProductList"
@@ -82,8 +82,10 @@ export default async function Page() {
 					<div className="rounded border bg-neutral-50 px-4 py-2">
 						<div className="flex items-center justify-between gap-2 py-2">
 							<div>
-								<p className="font-semibold text-neutral-900">Your Total</p>
-								<p className="mt-1 text-sm text-neutral-500">Shipping will be calculated in the next step</p>
+								<p className="font-semibold text-neutral-900">Il tuo totale</p>
+								<p className="mt-1 text-sm text-neutral-500">
+									Le spese di spedizione verranno calcolate nel passaggio successivo
+								</p>
 							</div>
 							<div className="font-medium text-neutral-900">
 								{formatMoney(checkout.totalPrice.gross.amount, checkout.totalPrice.gross.currency)}

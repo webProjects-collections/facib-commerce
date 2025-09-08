@@ -50,12 +50,12 @@ export async function selectRandomAvailableVariant({ page }: { page: Page }) {
 export async function addCurrentProductToCart({ page }: { page: Page }) {
 	expect(page.url()).toContain("/products/");
 	expect(page.url()).toContain("?variant=");
-	const checkoutButton = page.getByRole("button", { name: "Add to cart" });
+	const checkoutButton = page.getByRole("button", { name: "Aggiungi al carrello" });
 	await checkoutButton.click();
 	await checkoutButton.isEnabled();
 }
 
 export async function openCart({ page }: { page: Page }) {
 	await page.getByTestId("CartNavItem").click();
-	await page.getByText("Your Shopping Cart").waitFor();
+	await page.getByText("Il tuo carrello").waitFor();
 }
